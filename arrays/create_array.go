@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 const (
 	summer = 3
@@ -12,6 +15,23 @@ func main() {
 
 	// declaration
 	var books [yearly]string
+
+	// The distances to five different locations
+	// integer array, each element is of 8 Bytes
+	speeds := [...]int{50, 40, 75, 30, 125}
+
+	// A data buffer with five bytes of capacity
+	characters := [...]byte{'H', 'E', 'L', 'L', 'O'}
+
+	// Currency exchange ratios only for a single currency
+	fraction := [...]float64{3.14145}
+
+	// Up/Down status of four different web servers
+	truth := [...]bool{true, false, true, false}
+
+	// A byte array that doesn't occupy memory space
+	// Obviously, do not use ellipsis on this one
+	var zero []byte
 
 	// initialization
 	books[0] = "3 Mistakes of my life"
@@ -32,4 +52,24 @@ func main() {
 	}
 
 	fmt.Printf("Books: %q", books)
+
+	separator := "\n" + strings.Repeat("-", 20) + "\n"
+	fmt.Print(separator)
+	fmt.Printf("Speeds: %d", speeds)
+
+	fmt.Print(separator)
+	fmt.Printf("Characters: %d", characters)
+
+	fmt.Print(separator)
+	fmt.Printf("Fractions: %.2f", fraction)
+
+	fmt.Print(separator)
+	fmt.Printf("Truth Values: %t", truth)
+
+	// no loop for zero elements
+	fmt.Print("\nzero", separator)
+	for i := 0; i < len(zero); i++ {
+		fmt.Printf("zero[%d]: %d\n", i, zero[i])
+	}
+
 }
