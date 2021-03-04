@@ -16,6 +16,7 @@ func main() {
 	todo = append(todo, "bath")
 	todo = append(todo, "breakfast", "learn go")
 	fmt.Printf("Todos: %#v\n", todo)
+
 	tomorrow := []string{"bike repair", "college"}
 	todo = append(todo, tomorrow...)
 	fmt.Printf("Todos: %#v\n", todo)
